@@ -75,6 +75,7 @@ export function initPostcard() {
       'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8',
     };
     const formData = new FormData(form);
+    formData.append('form-name', 'contact');
     const body = new URLSearchParams(formData).toString();
     fetch(action, { method: 'POST', headers, body }).then(handleResponse).catch(handleError);
   }
