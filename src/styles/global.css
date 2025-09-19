@@ -32,3 +32,55 @@ body {
     radial-gradient(at 97% 77%, #b380fa 0, #0000 50%),
     radial-gradient(at 61% 86%, #56e16d 0, #0000 50%);
 }
+
+.form-input {
+  @apply text-sm sm:text-xl
+  font-bold tracking-wide 
+  border-none bg-transparent focus:outline-0
+  placeholder-rose-600 focus:placeholder-transparent visited:placeholder-transparent;
+}
+h1 span {
+  display: inline-block;
+  vertical-align: baseline;
+  margin: 0 -0.1em;
+}
+h1 span:nth-child(1) {
+  transform: translateY(-2px);
+}
+h1 span:nth-child(2) {
+  transform: translateY(4px);
+}
+h1 span:nth-child(3) {
+  transform: translateY(4px);
+}
+h1 span:nth-child(4) {
+  transform: translateY(-2px);
+}
+h1 span:nth-child(5) {
+  transform: translateY(2px);
+}
+
+h1 span:nth-child(7) {
+  transform: translateY(-2px);
+}
+h1 span:nth-child(8) {
+  transform: translateY(2px);
+}
+h1 span:nth-child(9) {
+  transform: translateY(-2px);
+}
+h1 span:nth-child(10) {
+  transform: translateY(4px);
+}
+h1 span:nth-child(11) {
+  transform: translateY(0px);
+}
+h1 span:nth-child(12) {
+  transform: translateY(-4px);
+}
+h1 span:nth-child(13) {
+  transform: translateY(-2px);
+}
+h1 span:nth-child(14) {
+  transform: translateY(4px);
+}

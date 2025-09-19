@@ -1,9 +1,6 @@
 [build]
-  # ignore = "node ignore_build.js"
-  publish = "dist"
   command = "npm run build"
+  publish = "dist"
 
-# POST BUILD OPTIMIZATIONS
 [build.processing]
-  # Keep Netlify processing on by default; set to true only if you want to skip Netlify optimizations
   skip_processing = false
