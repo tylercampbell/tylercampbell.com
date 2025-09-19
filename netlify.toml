@@ -1,17 +1,20 @@
 [build]
-  #ignore = "node ignore_build.js"
-  publish = "_site"
+  # ignore = "node ignore_build.js"
+  publish = "dist"
   command = "npm run build"
 
 # POST BUILD OPTIMIZATIONS
 [build.processing]
-  skip_processing = true
+  # Keep Netlify processing on by default; set to true only if you want to skip Netlify optimizations
+  skip_processing = false
 
 # NETLIFY PLUGINS
 [[plugins]]
   package = "netlify-plugin-cache"
   [plugins.inputs]
     paths = [
-      "_site/img", # Eleventy-Image Disk Cache
-      ".cache" # Remote Asset Cache (not used currently)
+      # Cache dependencies and Vite build cache to speed builds on Netlify
+      "node_modules",
+      "node_modules/.vite",
+      ".cache"
     ]

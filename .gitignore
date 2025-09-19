@@ -1,5 +1,7 @@
+.astro
 .cache
 .DS_Store
 _site
+dist
 node_modules
-package-lock.json
+Thumbs.db
