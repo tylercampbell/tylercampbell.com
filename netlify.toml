@@ -7,14 +7,3 @@
 [build.processing]
   # Keep Netlify processing on by default; set to true only if you want to skip Netlify optimizations
   skip_processing = false
-
-# NETLIFY PLUGINS
-[[plugins]]
-  package = "netlify-plugin-cache"
-  [plugins.inputs]
-    paths = [
-      # Cache dependencies and Vite build cache to speed builds on Netlify
-      "node_modules",
-      "node_modules/.vite",
-      ".cache"
-    ]
