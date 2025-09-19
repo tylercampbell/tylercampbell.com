@@ -69,11 +69,11 @@
   </aside>
 </div>
 
-<!-- Client behavior: load the postcard client module and call initPostcard() when the module loads. -->
-<script type="module">
-  import { initPostcard } from '/src/components/postcard-client.js';
+<script>
+  // Import using relative path - Astro will bundle this
+  import { initPostcard } from './postcard-client.js';
+
   if (typeof window !== 'undefined') {
-    // run after a microtask so DOM is ready in most environments
     Promise.resolve().then(() => {
       try {
         initPostcard();
