@@ -11,18 +11,16 @@ import Postcard from '../components/Postcard.astro';
       content="Tyler Campbell is making things in the beautiful state of Georgia."
     />
     <meta name="author" content="Tyler Campbell" />
-    <meta name="viewport" content="width=device-width,initial-scale=1" />
+
     <meta property="og:title" content="Tyler Campbell" />
     <meta
       property="og:description"
       content="Tyler Campbell is making things in the beautiful state of Georgia."
     />
     <meta property="og:image" content="/ogimage-ty-memoji-01.jpg" />
+
     <link rel="canonical" href="https://www.tylercampbell.com/" />
-    <link rel="icon" href="/favicon.ico" sizes="any" />
-    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
-    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
-    <!-- Preload the critical font only; OG image is for social previews and not used in-page -->
+
     <link
       rel="preload"
       href="/Nunito-VariableFont_wght.woff2"
@@ -32,7 +30,9 @@ import Postcard from '../components/Postcard.astro';
     />
   </head>
 
-  <main class="relative w-full h-screen grid place-items-center px-4 bg-sky-400">
+  <main
+    class="relative w-full h-screen grid place-items-start portrait:pt-[15vh] landscape:pt-[5vh] px-4 bg-sky-400"
+  >
     <video
       autoplay
       loop
@@ -45,23 +45,24 @@ import Postcard from '../components/Postcard.astro';
 
     <div id="contact" class="relative w-full">
       <h1
-        class="mb-8 opacity-50 text-7xl font-black text-center text-sky-100 text-shadow-lg text-shadow-blue-500"
+        class="mb-8 opacity-50 text-5xl sm:text-7xl font-black text-center text-indigo-50 text-shadow-lg text-shadow-blue-500"
         aria-label="Tyler Campbell"
       >
-        <span>T</span>
-        <span>y</span>
-        <span>l</span>
-        <span>e</span>
-        <span>r</span>
-        <br />
-        <span>C</span>
-        <span>a</span>
-        <span>m</span>
-        <span>p</span>
-        <span>b</span>
-        <span>e</span>
-        <span>l</span>
-        <span>l</span>
+        <span class="-translate-y-0.5 !-mr-[0.35em]">T</span>
+        <span class="translate-y-1">y</span>
+        <span class="translate-y-1">l</span>
+        <span class="translate-y-0.5">e</span>
+        <span class="translate-y-0.5">r</span>
+        <span class="landscape:inline portrait:hidden min-w-4 sm:min-w-6"> </span>
+        <br class="landscape:hidden portrait:inline" />
+        <span class="-translate-y-0.5 !-mr-[0.2em]">C</span>
+        <span class="translate-y-0.5">a</span>
+        <span class="-translate-y-0.5 !-mr-[0.24em]">m</span>
+        <span class="translate-y-1">p</span>
+        <span class="translate-y-0">b</span>
+        <span class="-translate-y-1">e</span>
+        <span class="-translate-y-0.5">l</span>
+        <span class="translate-y-1">l</span>
       </h1>
       <p
         id="prompt"

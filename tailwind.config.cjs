@@ -3,7 +3,12 @@ module.exports = {
     './src/**/*.{astro,html,js,jsx,ts,tsx}'
   ],
   theme: {
-    extend: {},
+    extend: {
+      screens: {
+        'portrait': {'raw': '(orientation: portrait)'},
+        'landscape': {'raw': '(orientation: landscape)'},
+      }
+    },
   },
   plugins: [],
 }
