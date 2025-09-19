@@ -1,26 +1,22 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import Postcard from '../components/Postcard.astro';
+
+const siteTitle = 'Tyler Campbell';
+const siteDescription = 'Tyler Campbell is making things in the beautiful state of Georgia.';
 ---
 
 <Layout>
   <head slot="head">
-    <title>Tyler Campbell</title>
-    <meta
-      name="description"
-      content="Tyler Campbell is making things in the beautiful state of Georgia."
-    />
-    <meta name="author" content="Tyler Campbell" />
+    <title>{siteTitle}</title>
+    <meta name="description" content={siteDescription} />
+    <meta name="author" content={siteTitle} />
 
-    <meta property="og:title" content="Tyler Campbell" />
-    <meta
-      property="og:description"
-      content="Tyler Campbell is making things in the beautiful state of Georgia."
-    />
+    <meta property="og:title" content={siteTitle} />
+    <meta property="og:description" content={siteDescription} />
     <meta property="og:image" content="/ogimage-ty-memoji-01.jpg" />
 
     <link rel="canonical" href="https://www.tylercampbell.com/" />
-
     <link
       rel="preload"
       href="/Nunito-VariableFont_wght.woff2"
@@ -30,9 +26,7 @@ import Postcard from '../components/Postcard.astro';
     />
   </head>
 
-  <main
-    class="relative w-full h-screen grid place-items-start portrait:pt-[15vh] landscape:pt-[5vh] px-4 bg-sky-400"
-  >
+  <main class="relative w-full h-screen grid place-items-start pt-[5vh] px-4 bg-sky-400">
     <video
       autoplay
       loop
@@ -43,9 +37,10 @@ import Postcard from '../components/Postcard.astro';
     >
     <div class="fixed mesh w-full h-full top-0 left-0 opacity-75"></div>
 
-    <div id="contact" class="relative w-full">
+    <div id="contact" class="relative w-full max-w-2xl mx-auto">
       <h1
-        class="mb-8 opacity-50 text-5xl sm:text-7xl font-black text-center text-indigo-50 text-shadow-lg text-shadow-blue-500"
+        class="mb-8 opacity-40 font-black text-center text-indigo-50 text-shadow-lg text-shadow-blue-700"
+        style="font-size: clamp(3rem, 14vw, 6rem);"
         aria-label="Tyler Campbell"
       >
         <span class="-translate-y-0.5 !-mr-[0.35em]">T</span>
@@ -53,8 +48,7 @@ import Postcard from '../components/Postcard.astro';
         <span class="translate-y-1">l</span>
         <span class="translate-y-0.5">e</span>
         <span class="translate-y-0.5">r</span>
-        <span class="landscape:inline portrait:hidden min-w-4 sm:min-w-6"> </span>
-        <br class="landscape:hidden portrait:inline" />
+        <span class="min-w-4 sm:min-w-6"> </span>
         <span class="-translate-y-0.5 !-mr-[0.2em]">C</span>
         <span class="translate-y-0.5">a</span>
         <span class="-translate-y-0.5 !-mr-[0.24em]">m</span>
@@ -66,10 +60,9 @@ import Postcard from '../components/Postcard.astro';
       </h1>
       <p
         id="prompt"
-        class="text-xl sm:text-2xl text-amber-800 font-bold text-center w-full py-4 tracking-wider"
+        class="text-xl sm:text-2xl text-amber-800 font-bold text-center w-full py-4 tracking-wide"
       >
-        Send this card to <span class="text-rose-600 text-shadow-lg text-shadow-sky-100">Tyler</span
-        >?
+        Send this card to <span class="text-rose-500">Tyler</span>?
       </p>
 
       <Postcard />

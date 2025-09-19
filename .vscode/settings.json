@@ -1,0 +1,18 @@
+{
+  "editor.formatOnSave": true,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+
+  "[astro]": {
+    "editor.defaultFormatter": "astro-build.astro-vscode"
+  },
+
+  "prettier.documentSelectors": ["**/*.astro"],
+
+  "tailwindCSS.includeLanguages": {
+    "astro": "html"
+  },
+
+  "emmet.includeLanguages": {
+    "astro": "html"
+  }
+}
