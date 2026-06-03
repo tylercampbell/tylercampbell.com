@@ -10,7 +10,7 @@ const siteDescription =
 ---
 
 <Layout>
-  <head slot="head">
+  <Fragment slot="head">
     <title>{siteTitle}</title>
     <meta name="description" content={siteDescription} />
     <meta name="author" content={siteTitle} />
@@ -27,7 +27,7 @@ const siteDescription =
       type="font/woff2"
       crossorigin
     />
-  </head>
+  </Fragment>
 
   <main>
     <!-- Hero: eyewitness cover image -->
@@ -98,7 +98,7 @@ const siteDescription =
 
       </div>
 
-      <p class="py-8 text-center text-[10px] font-bold tracking-[0.2em] uppercase text-stone-400">
+      <p class="py-8 text-center text-[10px] font-bold tracking-[0.2em] uppercase text-stone-600">
         &copy; {new Date().getFullYear()} Tyler Campbell
       </p>
     </section>

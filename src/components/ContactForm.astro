@@ -86,7 +86,7 @@
 </form>
 
 <!-- Success state: tabindex="-1" allows JS to programmatically focus it for keyboard users -->
-<aside id="success" class="hidden" role="status" aria-live="polite" tabindex="-1">
+<div id="success" class="hidden" role="status" aria-live="polite" tabindex="-1">
   <div class="border-l-4 border-red-700 pl-6 py-2">
     <p class="text-[11px] font-bold tracking-[0.2em] uppercase text-stone-600 mb-3">
       Message Received
@@ -94,7 +94,7 @@
     <p class="font-serif text-3xl font-black text-stone-900">Thank you.</p>
     <p class="text-sm text-stone-700 mt-2">I'll be in touch shortly.</p>
   </div>
-</aside>
+</div>
 
 <script>
   import { initContactForm } from './contact-form-client.js';
