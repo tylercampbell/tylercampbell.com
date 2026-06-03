@@ -1,9 +1,12 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import Postcard from '../components/Postcard.astro';
+import { Image } from 'astro:assets';
+import ContactForm from '../components/ContactForm.astro';
+import eyewitness from '../assets/eyewitness.jpg';
 
 const siteTitle = 'Tyler Campbell';
-const siteDescription = 'Tyler Campbell is making things in the beautiful state of Georgia.';
+const siteDescription =
+  'Tyler Campbell — Designer and Developer making engaging elearning and digital experiences in Georgia.';
 ---
 
 <Layout>
@@ -14,7 +17,7 @@ const siteDescription = 'Tyler Campbell is making things in the beautiful state 
 
     <meta property="og:title" content={siteTitle} />
     <meta property="og:description" content={siteDescription} />
-    <meta property="og:image" content="/ogimage-ty-memoji-01.jpg" />
+    <meta property="og:image" content="/og.jpg" />
 
     <link rel="canonical" href="https://www.tylercampbell.com/" />
     <link
@@ -26,49 +29,78 @@ const siteDescription = 'Tyler Campbell is making things in the beautiful state 
     />
   </head>
 
-  <main class="relative w-full h-screen grid place-items-start pt-[5vh] px-4 bg-sky-400">
-    <video
-      autoplay
-      loop
-      muted
-      playsinline
-      class="fixed object-cover w-full h-full top-0 left-0 blur-md"
-      ><source src="/clouds.mp4" type="video/mp4" />Your browser does not support the video element.</video
+  <main>
+    <!-- Hero: eyewitness cover image -->
+    <section
+      class="flex flex-col items-center justify-center gap-6 bg-stone-100 p-6"
+      style="min-height: 100vh;"
+      aria-label="Tyler Campbell — Designer, Developer"
     >
-    <div class="fixed mesh w-full h-full top-0 left-0 opacity-75"></div>
-
-    <div id="contact" class="relative w-full max-w-2xl mx-auto">
-      <h1
-        class="mb-8 opacity-25 font-black text-center text-white text-shadow-lg text-shadow-indigo-600"
-        style="font-size: clamp(3rem, 14vw, 6rem);"
-        aria-label="Tyler Campbell"
+      <a
+        href="#contact"
+        aria-label="Scroll to contact form"
+        class="rounded-sm shadow-[0_20px_60px_rgba(0,0,0,0.38)] cursor-pointer focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-red-700"
       >
-        <span class="-translate-y-0.5 !-mr-[0.35em]">T</span>
-        <span class="translate-y-1">y</span>
-        <span class="translate-y-1">l</span>
-        <span class="translate-y-0.5">e</span>
-        <span class="-translate-y-0.5">r</span>
-
-        <span class="min-w-5 sm:min-w-7"> </span>
-
-        <span class="-translate-y-0.5 !-mr-[0.2em]">C</span>
-        <span class="translate-y-0.5">a</span>
-        <span class="-translate-y-0.5 !-mr-[0.24em]">m</span>
-        <span class="translate-y-1">p</span>
-        <span class="translate-y-0">b</span>
-        <span class="-translate-y-1">e</span>
-        <span class="-translate-y-0.5">l</span>
-        <span class="translate-y-1">l</span>
-      </h1>
-
-      <p
-        id="prompt"
-        class="text-xl sm:text-2xl text-sky-700 font-bold text-center w-full py-4 tracking-wide"
+        <Image
+          src={eyewitness}
+          format="webp"
+          width={1200}
+          height={1542}
+          alt="Tyler Campbell — Designer, Developer: Discover how engaging elearning comes to life through motion design, interactive courses, and thoughtfully crafted digital instruction"
+          style="max-height: min(82vh, 720px); width: auto;"
+          class="block max-w-full rounded-sm"
+          loading="eager"
+          fetchpriority="high"
+        />
+      </a>
+      <a
+        href="#contact"
+        class="text-stone-500 hover:text-stone-700 transition-colors"
+        aria-hidden="true"
+        tabindex="-1"
       >
-        Send this card to <span class="font-extrabold text-rose-500">Tyler</span>?
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14M5 12l7 7 7-7"/></svg>
+      </a>
+    </section>
+
+    <!-- Contact section: min-h-screen ensures it can always scroll to the top -->
+    <section id="contact" class="bg-stone-100 flex flex-col min-h-screen">
+      <div class="flex-1 w-full max-w-xl mx-auto py-20 px-6">
+
+        <!-- Section header -->
+        <div class="mb-12">
+          <span
+            class="inline-block border-2 border-black px-3 py-0.5 text-[10px] font-bold tracking-[0.25em] uppercase mb-5"
+          >
+            Contact
+          </span>
+          <h2 class="font-serif text-4xl font-black leading-tight mb-3">
+            Send a Message
+          </h2>
+          <div class="w-14 h-[3px] bg-red-700"></div>
+        </div>
+
+        <!-- Form -->
+        <ContactForm />
+
+        <!-- Email alternative -->
+        <div class="mt-12 pt-8 border-t border-stone-300">
+          <p class="text-[10px] font-bold tracking-[0.2em] uppercase text-stone-600 mb-2">
+            Prefer Email?
+          </p>
+          <a
+            href="mailto:hello@tylercampbell.com"
+            class="text-red-700 font-bold text-lg hover:underline underline-offset-2 transition-colors"
+          >
+            hello@tylercampbell.com
+          </a>
+        </div>
+
+      </div>
+
+      <p class="py-8 text-center text-[10px] font-bold tracking-[0.2em] uppercase text-stone-400">
+        &copy; {new Date().getFullYear()} Tyler Campbell
       </p>
-
-      <Postcard />
-    </div>
+    </section>
   </main>
 </Layout>

@@ -10,18 +10,13 @@
     "format:check": "prettier --plugin=prettier-plugin-astro --check \"src/**/*.{astro,js,css,md,json}\""
   },
   "devDependencies": {
-    "@tailwindcss/postcss": "^4.1.13",
-    "astro": "^5.13.8",
-    "autoprefixer": "^10.4.21",
-    "postcss": "^8.5.6",
-    "prettier": "^3.6.2",
-    "prettier-plugin-astro": "^0.14.1",
-    "tailwindcss": "^4.1.13"
-  },
-  "dependencies": {
     "@astrojs/check": "^0.9.4",
     "@astrojs/sitemap": "^3.6.0",
     "@tailwindcss/vite": "^4.1.13",
+    "astro": "^5.13.8",
+    "prettier": "^3.6.2",
+    "prettier-plugin-astro": "^0.14.1",
+    "tailwindcss": "^4.1.13",
     "typescript": "^5.9.2"
   }
 }
