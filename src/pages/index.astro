@@ -30,7 +30,7 @@ const siteDescription =
   </Fragment>
 
   <main>
-    <!-- Hero: eyewitness cover image -->
+    <!-- Hero -->
     <section
       class="flex flex-col items-center justify-center gap-6 bg-stone-100 p-6"
       style="min-height: 100vh;"
@@ -59,14 +59,24 @@ const siteDescription =
         aria-hidden="true"
         tabindex="-1"
       >
-        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14M5 12l7 7 7-7"/></svg>
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="20"
+          height="20"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          aria-hidden="true"><path d="M12 5v14M5 12l7 7 7-7"></path></svg
+        >
       </a>
     </section>
 
-    <!-- Contact section: min-h-screen ensures it can always scroll to the top -->
+    <!-- Contact section -->
     <section id="contact" class="bg-stone-100 flex flex-col min-h-screen">
       <div class="flex-1 w-full max-w-xl mx-auto py-20 px-6">
-
         <!-- Section header -->
         <div class="mb-12">
           <span
@@ -74,9 +84,7 @@ const siteDescription =
           >
             Contact
           </span>
-          <h2 class="font-serif text-4xl font-black leading-tight mb-3">
-            Send a Message
-          </h2>
+          <h2 class="font-serif text-4xl font-black leading-tight mb-3">Send a Message</h2>
           <div class="w-14 h-[3px] bg-red-700"></div>
         </div>
 
@@ -95,10 +103,9 @@ const siteDescription =
             hello@tylercampbell.com
           </a>
         </div>
-
       </div>
 
-      <p class="py-8 text-center text-[10px] font-bold tracking-[0.2em] uppercase text-stone-600">
+      <p class="py-8 text-center text-[10px] tracking-[0.2em] uppercase text-stone-600">
         &copy; {new Date().getFullYear()} Tyler Campbell
       </p>
     </section>
