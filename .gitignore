@@ -5,3 +5,6 @@ _site
 dist
 node_modules
 Thumbs.db
+
+# Videos — unignore after editing
+public/videos/

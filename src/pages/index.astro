@@ -32,14 +32,14 @@ const siteDescription =
   <main>
     <!-- Hero -->
     <section
-      class="flex flex-col items-center justify-center gap-6 bg-stone-100 p-6"
+      class="flex flex-col items-center justify-center gap-6 p-6"
       style="min-height: 100vh;"
       aria-label="Tyler Campbell — Designer, Developer"
     >
       <a
         href="#contact"
         aria-label="Scroll to contact form"
-        class="rounded-sm shadow-[0_20px_60px_rgba(0,0,0,0.38)] cursor-pointer focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-red-700"
+        class="rounded-sm shadow-[0_20px_60px_rgba(0,0,0,0.38)] cursor-pointer focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[var(--color-accent)]"
       >
         <Image
           src={eyewitness}
@@ -55,7 +55,7 @@ const siteDescription =
       </a>
       <a
         href="#contact"
-        class="text-stone-500 hover:text-stone-700 transition-colors"
+        class="text-[var(--color-text-subtle)] hover:text-[var(--color-text)] transition-colors"
         aria-hidden="true"
         tabindex="-1"
       >
@@ -75,37 +75,32 @@ const siteDescription =
     </section>
 
     <!-- Contact section -->
-    <section id="contact" class="bg-stone-100 flex flex-col min-h-screen">
+    <section id="contact" class="flex flex-col min-h-screen">
       <div class="flex-1 w-full max-w-xl mx-auto py-20 px-6">
-        <!-- Section header -->
+
         <div class="mb-12">
-          <span
-            class="inline-block border border-black px-3 py-0.5 text-[10px] tracking-[0.25em] uppercase mb-5"
-          >
-            Contact
-          </span>
-          <h2 class="font-serif text-4xl font-black leading-tight mb-3">Say Hello</h2>
-          <div class="w-14 h-[3px] bg-red-700"></div>
+          <span class="section-tag">Contact</span>
+          <h2 class="section-heading">Say Hello</h2>
+          <div class="section-rule"></div>
         </div>
 
-        <!-- Form -->
         <ContactForm />
 
-        <!-- Email alternative -->
-        <div class="mt-12 pt-8 border-t border-stone-300">
-          <p class="text-[10px] font-bold tracking-[0.2em] uppercase text-stone-600 mb-2">
+        <div class="mt-12 pt-8 border-t border-[var(--color-border)]">
+          <p class="text-[10px] font-bold tracking-[0.2em] uppercase mb-2 text-[var(--color-text-muted)]">
             Prefer Email?
           </p>
           <a
             href="mailto:hello@tylercampbell.com"
-            class="text-red-700 font-bold text-lg hover:underline underline-offset-2 transition-colors"
+            class="font-bold text-lg hover:underline underline-offset-2 transition-colors text-[var(--color-accent)]"
           >
             hello@tylercampbell.com
           </a>
         </div>
+
       </div>
 
-      <p class="py-8 text-center text-[10px] tracking-[0.2em] uppercase text-stone-600">
+      <p class="py-8 text-center text-[10px] tracking-[0.2em] uppercase text-[var(--color-text-muted)]">
         &copy; {new Date().getFullYear()} Tyler Campbell
       </p>
     </section>

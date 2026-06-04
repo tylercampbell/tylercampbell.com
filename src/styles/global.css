@@ -1,15 +1,42 @@
 @import 'tailwindcss';
 
-@font-face {
-  font-family: 'Nunito';
-  src: url('/Nunito-VariableFont_wght.woff2') format('woff2');
-  font-weight: 100 900;
-  font-style: normal;
-  font-display: swap;
+/* Class-based dark mode — toggled via .dark on <html> */
+@custom-variant dark (&:where(.dark, .dark *));
+
+/* ─── Color tokens ─────────────────────────────────── */
+/* Note: the dark mode toggle button uses hardcoded Tailwind classes in Layout.astro, not these tokens. */
+:root {
+  --color-bg: var(--color-stone-100);           /* page background */
+  --color-surface: var(--color-stone-200);      /* focused input background */
+  --color-border: var(--color-stone-300);       /* "Prefer Email?" divider line */
+  --color-input-border: var(--color-stone-700); /* Name/Email/Message input underlines; field labels */
+  --color-text: var(--color-stone-900);         /* headings; body text; input text; "Contact" tag border; "Thank you." */
+  --color-text-muted: var(--color-stone-600);   /* "Prefer Email?" sublabel; submit hint; copyright; success message */
+  --color-text-subtle: var(--color-stone-500);  /* input placeholders; scroll arrow */
+  --color-accent: var(--color-red-700);         /* submit button; section rule; focus rings; email link; focused input underline */
+  --color-accent-hover: var(--color-red-800);   /* submit button on hover */
 }
 
+.dark {
+  --color-bg: var(--color-stone-900);           /* page background */
+  --color-surface: var(--color-stone-800);      /* focused input background */
+  --color-border: var(--color-stone-700);       /* "Prefer Email?" divider line */
+  --color-input-border: var(--color-stone-400); /* input underlines; field labels */
+  --color-text: var(--color-stone-50);          /* headings; body text; input text */
+  --color-text-muted: var(--color-stone-400);   /* sublabels; submit hint; copyright; success message */
+  --color-text-subtle: var(--color-stone-500);  /* input placeholders; scroll arrow */
+  --color-accent: var(--color-red-500);         /* submit button; section rule; focus rings; email link */
+  --color-accent-hover: var(--color-red-400);   /* submit button on hover */
+}
+
+/* ─── Base ─────────────────────────────────────────── */
 html {
   scroll-behavior: smooth;
+  color-scheme: light;
+}
+
+html.dark {
+  color-scheme: dark;
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -29,4 +56,81 @@ body {
     Roboto,
     'Helvetica Neue',
     Arial;
+  background-color: var(--color-bg);
+  color: var(--color-text);
+}
+
+@font-face {
+  font-family: 'Nunito';
+  src: url('/Nunito-VariableFont_wght.woff2') format('woff2');
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* ─── Component classes ────────────────────────────── */
+@layer components {
+  /* Eyewitness-style section label tag */
+  .section-tag {
+    display: inline-block;
+    border: 2px solid var(--color-text);
+    padding: 0.125rem 0.75rem;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    margin-bottom: 1.25rem;
+  }
+
+  /* Section heading (serif, heavy) */
+  .section-heading {
+    @apply font-serif font-black leading-tight;
+    font-size: 2.25rem;
+    margin-bottom: 0.75rem;
+    color: var(--color-text);
+  }
+
+  /* Red accent rule below headings */
+  .section-rule {
+    width: 3.5rem;
+    height: 3px;
+    background-color: var(--color-accent);
+  }
+
+  /* Form field label */
+  .form-label {
+    display: block;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    margin-bottom: 0.5rem;
+    color: var(--color-input-border);
+  }
+
+  /* Form text input / textarea */
+  .form-field {
+    width: 100%;
+    background: transparent;
+    padding-top: 0.625rem;
+    padding-bottom: 0.625rem;
+    font-size: 1rem;
+    border-bottom: 2px solid var(--color-input-border);
+    color: var(--color-text);
+    outline: none;
+    resize: none;
+    transition:
+      border-color 150ms,
+      background-color 150ms;
+  }
+
+  .form-field:focus {
+    border-bottom-color: var(--color-accent);
+    background-color: var(--color-surface);
+  }
+
+  .form-field::placeholder {
+    color: var(--color-text-subtle);
+    opacity: 1;
+  }
 }
