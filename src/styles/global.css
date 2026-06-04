@@ -26,8 +26,8 @@
   --color-ink:          var(--color-taupe-50);
   --color-dim:          var(--color-taupe-400);
   --color-ghost:        var(--color-taupe-500);
-  --color-accent:       var(--color-teal-500);
-  --color-accent-hover: var(--color-teal-400);
+  --color-accent:       var(--color-rose-400);
+  --color-accent-hover: var(--color-rose-300);
 }
 
 /* ─── Base ─────────────────────────────────────────── */
