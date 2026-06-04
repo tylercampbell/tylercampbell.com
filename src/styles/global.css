@@ -13,8 +13,8 @@
   --color-ink:          var(--color-taupe-900);  /* primary text */
   --color-dim:          var(--color-taupe-600);  /* secondary text */
   --color-ghost:        var(--color-taupe-500);  /* placeholders; scroll arrow */
-  --color-accent:       var(--color-rose-700);    /* CTA; accents; focus rings */
-  --color-accent-hover: var(--color-rose-800);
+  --color-accent:       var(--color-rose-600);    /* CTA; accents; focus rings */
+  --color-accent-hover: var(--color-rose-700);
 }
 
 /* prettier-ignore */
