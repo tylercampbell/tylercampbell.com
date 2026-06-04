@@ -78,7 +78,7 @@ body {
 
   /* Form text input / textarea — all three form fields */
   .form-field {
-    @apply w-full bg-transparent py-2.5 text-base outline-none resize-none transition-colors text-ink;
+    @apply w-full bg-transparent p-2.5 text-base outline-none resize-none transition-colors text-ink;
     border-bottom: 2px solid var(--color-field);
   }
 
