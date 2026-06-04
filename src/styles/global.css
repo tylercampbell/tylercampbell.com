@@ -4,29 +4,30 @@
 @custom-variant dark (&:where(.dark, .dark *));
 
 /* ─── Color tokens ─────────────────────────────────── */
-/* Note: the dark mode toggle button uses hardcoded Tailwind classes in Layout.astro, not these tokens. */
-:root {
-  --color-bg: var(--color-stone-100);           /* page background */
-  --color-surface: var(--color-stone-200);      /* focused input background */
-  --color-border: var(--color-stone-300);       /* "Prefer Email?" divider line */
-  --color-input-border: var(--color-stone-700); /* Name/Email/Message input underlines; field labels */
-  --color-text: var(--color-stone-900);         /* headings; body text; input text; "Contact" tag border; "Thank you." */
-  --color-text-muted: var(--color-stone-600);   /* "Prefer Email?" sublabel; submit hint; copyright; success message */
-  --color-text-subtle: var(--color-stone-500);  /* input placeholders; scroll arrow */
-  --color-accent: var(--color-red-700);         /* submit button; section rule; focus rings; email link; focused input underline */
-  --color-accent-hover: var(--color-red-800);   /* submit button on hover */
+/* prettier-ignore */
+@theme {
+  --color-page:         var(--color-taupe-100);  /* page background */
+  --color-surface:      var(--color-taupe-200);  /* focused input background */
+  --color-trim:         var(--color-taupe-300);  /* divider lines */
+  --color-field:        var(--color-taupe-700);  /* input underlines; field labels */
+  --color-ink:          var(--color-taupe-900);  /* primary text */
+  --color-dim:          var(--color-taupe-600);  /* secondary text */
+  --color-ghost:        var(--color-taupe-500);  /* placeholders; scroll arrow */
+  --color-accent:       var(--color-rose-700);    /* CTA; accents; focus rings */
+  --color-accent-hover: var(--color-rose-800);
 }
 
+/* prettier-ignore */
 .dark {
-  --color-bg: var(--color-stone-900);           /* page background */
-  --color-surface: var(--color-stone-800);      /* focused input background */
-  --color-border: var(--color-stone-700);       /* "Prefer Email?" divider line */
-  --color-input-border: var(--color-stone-400); /* input underlines; field labels */
-  --color-text: var(--color-stone-50);          /* headings; body text; input text */
-  --color-text-muted: var(--color-stone-400);   /* sublabels; submit hint; copyright; success message */
-  --color-text-subtle: var(--color-stone-500);  /* input placeholders; scroll arrow */
-  --color-accent: var(--color-red-500);         /* submit button; section rule; focus rings; email link */
-  --color-accent-hover: var(--color-red-400);   /* submit button on hover */
+  --color-page:         var(--color-taupe-800);
+  --color-surface:      var(--color-taupe-900);
+  --color-trim:         var(--color-taupe-600);
+  --color-field:        var(--color-taupe-400);
+  --color-ink:          var(--color-taupe-50);
+  --color-dim:          var(--color-taupe-400);
+  --color-ghost:        var(--color-taupe-500);
+  --color-accent:       var(--color-teal-500);
+  --color-accent-hover: var(--color-teal-700);
 }
 
 /* ─── Base ─────────────────────────────────────────── */
@@ -56,8 +57,8 @@ body {
     Roboto,
     'Helvetica Neue',
     Arial;
-  background-color: var(--color-bg);
-  color: var(--color-text);
+  background-color: var(--color-page);
+  color: var(--color-ink);
 }
 
 @font-face {
@@ -68,60 +69,17 @@ body {
   font-display: swap;
 }
 
-/* ─── Component classes ────────────────────────────── */
+/* ─── Component classes (repeated elements only) ───── */
 @layer components {
-  /* Eyewitness-style section label tag */
-  .section-tag {
-    display: inline-block;
-    border: 2px solid var(--color-text);
-    padding: 0.125rem 0.75rem;
-    font-size: 10px;
-    font-weight: 700;
-    letter-spacing: 0.25em;
-    text-transform: uppercase;
-    margin-bottom: 1.25rem;
-  }
-
-  /* Section heading (serif, heavy) */
-  .section-heading {
-    @apply font-serif font-black leading-tight;
-    font-size: 2.25rem;
-    margin-bottom: 0.75rem;
-    color: var(--color-text);
-  }
-
-  /* Red accent rule below headings */
-  .section-rule {
-    width: 3.5rem;
-    height: 3px;
-    background-color: var(--color-accent);
-  }
-
-  /* Form field label */
+  /* Form field label — Name, Email Address, Message */
   .form-label {
-    display: block;
-    font-size: 11px;
-    font-weight: 700;
-    letter-spacing: 0.2em;
-    text-transform: uppercase;
-    margin-bottom: 0.5rem;
-    color: var(--color-input-border);
+    @apply block text-[11px] font-bold tracking-[0.2em] uppercase mb-2 text-field;
   }
 
-  /* Form text input / textarea */
+  /* Form text input / textarea — all three form fields */
   .form-field {
-    width: 100%;
-    background: transparent;
-    padding-top: 0.625rem;
-    padding-bottom: 0.625rem;
-    font-size: 1rem;
-    border-bottom: 2px solid var(--color-input-border);
-    color: var(--color-text);
-    outline: none;
-    resize: none;
-    transition:
-      border-color 150ms,
-      background-color 150ms;
+    @apply w-full bg-transparent py-2.5 text-base outline-none resize-none transition-colors text-ink;
+    border-bottom: 2px solid var(--color-field);
   }
 
   .form-field:focus {
@@ -130,7 +88,7 @@ body {
   }
 
   .form-field::placeholder {
-    color: var(--color-text-subtle);
+    color: var(--color-ghost);
     opacity: 1;
   }
 }

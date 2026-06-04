@@ -49,8 +49,7 @@
       rows="4"
       data-min-rows="4"
       required
-      class="form-field"
-    ></textarea>
+      class="form-field"></textarea>
   </div>
 
   <!-- Submit -->
@@ -60,11 +59,11 @@
       type="submit"
       disabled
       title="Fill in your name, a valid email address, and a message to send"
-      class="px-10 py-3 text-white text-[11px] font-bold tracking-[0.2em] uppercase rounded-full transition-colors bg-[var(--color-accent)] enabled:hover:bg-[var(--color-accent-hover)] enabled:cursor-pointer disabled:opacity-40 disabled:cursor-not-allowed"
+      class="px-10 leading-11 text-white dark:text-page text-[11px] font-bold tracking-[0.2em] uppercase rounded-full transition-colors bg-accent enabled:hover:bg-accent-hover enabled:cursor-pointer disabled:opacity-40 disabled:cursor-not-allowed"
     >
       Send Message
     </button>
-    <p id="submit-hint" class="mt-3 text-[11px] tracking-wide text-[var(--color-text-muted)]">
+    <p id="submit-hint" class="mt-3 text-[11px] tracking-wide text-dim">
       Name, email, and message required
     </p>
   </div>
@@ -72,10 +71,10 @@
 
 <!-- Success state -->
 <div id="success" class="hidden" role="status" aria-live="polite" tabindex="-1">
-  <div class="border-l-4 border-[var(--color-accent)] pl-6 py-2">
-    <p class="form-label mb-3 text-[var(--color-text-muted)]">Message Received</p>
-    <p class="font-serif text-3xl font-black text-[var(--color-text)]">Thank you.</p>
-    <p class="text-sm mt-2 text-[var(--color-text-muted)]">I'll be in touch shortly.</p>
+  <div class="border-l-4 border-accent pl-6 py-2">
+    <p class="form-label mb-3 text-dim">Message Received</p>
+    <p class="font-serif text-3xl font-black text-ink">Thank you.</p>
+    <p class="text-sm mt-2 text-dim">I'll be in touch shortly.</p>
   </div>
 </div>
 
