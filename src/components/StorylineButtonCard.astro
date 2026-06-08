@@ -1,0 +1,44 @@
+---
+import { Image } from 'astro:assets';
+import storylineButton from '../assets/perfect-storyline-button.jpg';
+---
+
+<section id="storyline-button" class="py-20 px-6">
+  <div class="w-full max-w-2xl mx-auto">
+    <div
+      class="rounded-sm shadow-[0_12px_40px_rgba(0,0,0,0.18)] overflow-hidden border border-trim"
+    >
+      <div class="bg-accent dark:bg-accent/40 px-5 py-3 text-center">
+        <h2 class="text-white font-serif font-semibold text-lg leading-tight">
+          The Perfect Articulate Storyline Button
+        </h2>
+      </div>
+      <div class="flex flex-col sm:flex-row">
+        <div class="sm:w-1/2 bg-black">
+          <Image
+            src={storylineButton}
+            format="webp"
+            alt="Three button states on a dark background: normal with a checkmark icon, hover with an info icon, and disabled with a blocked icon"
+            class="w-full h-full object-cover block"
+          />
+        </div>
+        <div class="sm:w-1/2 p-6 bg-surface flex flex-col justify-between gap-6">
+          <ul class="space-y-2 text-sm text-ink">
+            <li>All interactive states — normal, hover, down, visited, disabled</li>
+            <li>WCAG-compliant with visually distinct states</li>
+            <li>Unique alt text per state for screen readers</li>
+            <li>Scales cleanly with any label length</li>
+            <li>Uses Storyline's native icon set — no imports needed</li>
+          </ul>
+          <a
+            href="/perfect-storyline-button.story"
+            download
+            class="inline-flex items-center justify-center bg-accent hover:bg-accent-hover text-white dark:text-page font-bold px-5 py-2.5 rounded-sm transition-colors text-sm tracking-wide"
+          >
+            Download Free
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

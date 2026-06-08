@@ -2,6 +2,7 @@
 import '../styles/global.css';
 import { Image } from 'astro:assets';
 import ContactForm from '../components/ContactForm.astro';
+import StorylineButtonCard from '../components/StorylineButtonCard.astro';
 import eyewitness from '../assets/eyewitness.jpg';
 
 const siteTitle = 'Tyler Campbell';
@@ -147,15 +148,15 @@ const siteDescription =
       </section>
 
       <!-- Contact section -->
-      <section id="contact" class="flex flex-col min-h-screen">
-        <div class="flex-1 w-full max-w-xl mx-auto py-20 px-6">
+      <section id="contact">
+        <div class="w-full max-w-xl mx-auto py-20 px-6">
           <div class="mb-12">
             <span
               class="inline-block border text-dim border-dim px-3 leading-5 text-[10px] tracking-[0.25em] uppercase mb-5"
               >Contact</span
             >
             <h2 class="font-serif text-4xl font-black leading-tight mb-3 text-ink">Say Hello</h2>
-            <div class="w-14 h-[3px] bg-accent"></div>
+            <div class="w-14 h-0.75 bg-accent"></div>
           </div>
 
           <ContactForm />
@@ -172,11 +173,13 @@ const siteDescription =
             </a>
           </div>
         </div>
-
-        <p class="py-8 text-center text-[10px] tracking-[0.2em] uppercase text-dim">
-          &copy; {new Date().getFullYear()} Tyler Campbell
-        </p>
       </section>
+
+      <StorylineButtonCard />
+
+      <p class="py-8 text-center text-[10px] tracking-[0.2em] uppercase text-dim">
+        &copy; {new Date().getFullYear()} Tyler Campbell
+      </p>
     </main>
 
     <script is:inline>

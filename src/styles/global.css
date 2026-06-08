@@ -19,15 +19,15 @@
 
 /* prettier-ignore */
 .dark {
-  --color-page:         var(--color-taupe-800);
-  --color-surface:      var(--color-taupe-900);
-  --color-trim:         var(--color-taupe-600);
-  --color-field:        var(--color-taupe-400);
-  --color-ink:          var(--color-taupe-50);
-  --color-dim:          var(--color-taupe-400);
-  --color-ghost:        var(--color-taupe-500);
-  --color-accent:       var(--color-rose-400);
-  --color-accent-hover: var(--color-rose-300);
+  --color-page:         var(--color-zinc-800);
+  --color-surface:      var(--color-zinc-900);
+  --color-trim:         var(--color-zinc-600);
+  --color-field:        var(--color-zinc-400);
+  --color-ink:          var(--color-zinc-50);
+  --color-dim:          var(--color-zinc-400);
+  --color-ghost:        var(--color-zinc-500);
+  --color-accent:       var(--color-red-400);
+  --color-accent-hover: var(--color-red-300);
 }
 
 /* ─── Base ─────────────────────────────────────────── */
