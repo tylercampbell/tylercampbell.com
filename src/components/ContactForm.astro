@@ -41,15 +41,32 @@
 
   <!-- Message -->
   <div>
-    <label for="message" class="form-label">Message</label>
+    <label for="message" class="form-label"
+      >Message <span class="normal-case font-normal tracking-normal text-ghost">(optional)</span
+      ></label
+    >
     <textarea
       id="message"
       name="message"
       placeholder="Tell me about your project..."
       rows="4"
       data-min-rows="4"
-      required
       class="form-field"></textarea>
+  </div>
+
+  <!-- Keep me updated -->
+  <div class="flex items-start gap-3">
+    <input
+      id="subscribe"
+      name="subscribe"
+      type="checkbox"
+      value="yes"
+      checked
+      class="mt-0.5 accent-accent cursor-pointer"
+    />
+    <label for="subscribe" class="text-sm text-dim cursor-pointer leading-snug">
+      Keep me updated. I want to hear about new stuff.
+    </label>
   </div>
 
   <!-- Submit -->
@@ -58,23 +75,21 @@
       id="submit"
       type="submit"
       disabled
-      title="Fill in your name, a valid email address, and a message to send"
+      title="Fill in your name and a valid email address to send"
       class="px-10 leading-11 text-white dark:text-page text-[11px] font-bold tracking-[0.2em] uppercase rounded-full transition-colors bg-accent enabled:hover:bg-accent-hover disabled:opacity-40 disabled:cursor-not-allowed"
     >
-      Send Message
+      Send
     </button>
-    <p id="submit-hint" class="mt-3 text-[11px] tracking-wide text-dim">
-      Name, email, and message required
-    </p>
+    <p id="submit-hint" class="mt-3 text-[11px] tracking-wide text-dim">Name and email required</p>
   </div>
 </form>
 
 <!-- Success state -->
 <div id="success" class="hidden" role="status" aria-live="polite" tabindex="-1">
   <div class="border-l-4 border-accent pl-6 py-2">
-    <p class="form-label mb-3 text-dim">Message Received</p>
-    <p class="font-serif text-3xl font-black text-ink">Thank you.</p>
-    <p class="text-sm mt-2 text-dim">I'll be in touch shortly.</p>
+    <p class="form-label mb-3 text-dim">Got it</p>
+    <p class="font-serif text-3xl font-black text-ink">Thanks!</p>
+    <p class="text-sm mt-2 text-dim">I'll be in touch.</p>
   </div>
 </div>
 

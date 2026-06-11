@@ -14,9 +14,8 @@ export function initContactForm() {
   }
 
   function updateSubmitState() {
-    if (!submitButton || !messageInput || !senderInput || !emailInput) return;
+    if (!submitButton || !senderInput || !emailInput) return;
     const ready =
-      messageInput.value.trim() !== '' &&
       senderInput.value.trim() !== '' &&
       isValidEmail(emailInput.value.trim());
     submitButton.disabled = !ready;
